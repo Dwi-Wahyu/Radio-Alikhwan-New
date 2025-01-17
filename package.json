@@ -1,0 +1,40 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@iconify/json": "^2.2.294",
+    "@pinia-plugin-persistedstate/nuxt": "^1.2.0"
+  },
+  "dependencies": {
+    "@formkit/auto-animate": "^0.8.2",
+    "@iconify/vue": "^4.3.0",
+    "@nuxt/icon": "^1.10.3",
+    "@nuxtjs/tailwindcss": "^6.12.2",
+    "@tiptap/extension-highlight": "^2.11.2",
+    "@tiptap/extension-image": "^2.11.2",
+    "@tiptap/extension-text-align": "^2.11.2",
+    "@tiptap/pm": "^2.11.2",
+    "@tiptap/starter-kit": "^2.11.2",
+    "@tiptap/vue-3": "^2.11.2",
+    "@types/axios": "^0.14.0",
+    "axios": "^1.6.8",
+    "chart.js": "^4.4.7",
+    "chartjs-plugin-datalabels": "^2.2.0",
+    "jwt-decode": "^4.0.0",
+    "moment": "^2.30.1",
+    "moment-timezone": "^0.5.46",
+    "nuxt": "^3.14.1592",
+    "vue": "latest",
+    "vue-chartjs": "^5.3.2",
+    "vue-router": "latest",
+    "vue3-carousel": "^0.12.0"
+  }
+}

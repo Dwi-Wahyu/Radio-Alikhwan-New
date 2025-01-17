@@ -1,0 +1,38 @@
+<template>
+  <div
+    class="w-full grid gap-5 sm:gap-0 sm:justify-items-center sm:grid-cols-3 grid-cols-1 bg-primary text-white px-20 py-16"
+  >
+    <img src="/logo/logo-footer.svg" alt="" />
+
+    <div class="md:ml-10">
+      <h1 class="font-semibold">Alamat</h1>
+      <div class="flex gap-2 items-start">
+        <Icon icon="mdi:location" />
+        <h1>
+          Radio Al-Ikhwan 101,90 FM Makassar, Jl. Abd. Kadir No. 1 A
+          Makassar 085210210911
+        </h1>
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <h1 class="font-semibold">Kontak Kami</h1>
+      <div class="flex items-center gap-2">
+        <Icon icon="mdi:location" />
+        <h1>RadioAlIkhwan</h1>
+      </div>
+      <div class="flex items-center gap-2">
+        <Icon icon="mdi:instagram" />
+        <h1>RadioAlIkhwanFM</h1>
+      </div>
+      <div class="flex items-center gap-2">
+        <Icon icon="ic:baseline-whatsapp" />
+        <h1>085210210911</h1>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { Icon } from "@iconify/vue/dist/iconify.js";
+</script>
