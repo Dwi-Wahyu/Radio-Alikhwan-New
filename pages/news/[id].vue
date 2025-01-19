@@ -36,13 +36,29 @@
 
             <span class="text-justify" v-html="artikel.content"> </span>
 
-            <h1>{{ moment(artikel.createdAt).format("YYYY-MM-DD") }}</h1>
+            <div class="flex items-center gap-2 justify-between">
+              <div class="flex gap-2">
+                <BaseButton class="flex gap-1" @click="handleAction('like')">
+                  <Icon :name="liked ? 'mdi:like' : 'mdi:like-outline'" />
+                  <h1>{{ artikel.like }}</h1>
+                </BaseButton>
+
+                <BaseButton class="flex gap-1" @click="handleAction('dislike')">
+                  <Icon
+                    class="rotate-180"
+                    :name="disliked ? 'mdi:like' : 'mdi:like-outline'"
+                  />
+                  <h1>{{ artikel.dislike }}</h1>
+                </BaseButton>
+              </div>
+              <h1>{{ moment(artikel.createdAt).format("YYYY-MM-DD") }}</h1>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="md:w-[40vw] w-full p-5">
-        <div class="flex items-center gap-3 mb-5">
+        <div class="flex items-center gap-2 mb-5">
           <h1 class="text-xl font-bold">Berita Lainnya</h1>
           <div class="border border-gray-400 flex-grow"></div>
         </div>
@@ -76,56 +92,8 @@ definePageMeta({
 
 import moment from "moment";
 import Header from "~/components/landing/Header.vue";
-
-const route = useRoute();
-const { id } = route.params;
-
-const artikelSelected = ref([]);
-
-type NewsData = {
-  id: string;
-  title: string;
-  imageUrl: string;
-  content: string;
-};
-
-type Artikel = {
-  id: string;
-  title: string;
-  content: string;
-  createdAt: Date;
-  thumbnail: string;
-};
-
-const news = ref<NewsData>();
-const idValid = ref(false);
-
-const artikel = ref<Artikel>();
-
-const newsData: NewsData[] = [
-  {
-    id: "1",
-    title:
-      "Novak appeals in court against dearless Care cancellation of Australian",
-    imageUrl: "/news/news1.png",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam suscipit, autem earum possimus blanditiis consequuntur inventore cupiditate iusto natus? Ratione non nesciunt qui officiis rem sapiente est similique voluptates quae facere fuga beatae, ullam excepturi velit ipsum explicabo, impedit dolores tenetur ut provident? Perferendis totam voluptate fugit ab facilis ullam est sit saepe minus ratione dolorem veniam ea provident nobis at cum beatae vel autem, similique asperiores voluptates recusandae voluptatem, numquam inventore. Cumque, impedit possimus. Architecto laborum laboriosam veritatis porro ab. Ut impedit minima aperiam eius numquam. Similique enim cupiditate sapiente sunt at totam autem est illum, eaque impedit hic! Sed molestiae similique optio ipsa quia consequuntur qui corporis sequi delectus accusamus ipsum nisi laborum temporibus, natus rerum reprehenderit quidem voluptate hic repudiandae dignissimos dolorem, reiciendis suscipit debitis eveniet? Voluptate tempore doloribus delectus saepe quasi sapiente ipsam. Nisi provident dolorem qui et quod corporis sit, esse dolor. Consectetur, cumque ipsa!",
-  },
-  {
-    id: "2",
-    title: "African Nation Are Struggling To Save",
-    imageUrl: "/news/news2.png",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam suscipit, autem earum possimus blanditiis consequuntur inventore cupiditate iusto natus? Ratione non nesciunt qui officiis rem sapiente est similique voluptates quae facere fuga beatae, ullam excepturi velit ipsum explicabo, impedit dolores tenetur ut provident? Perferendis totam voluptate fugit ab facilis ullam est sit saepe minus ratione dolorem veniam ea provident nobis at cum beatae vel autem, similique asperiores voluptates recusandae voluptatem, numquam inventore. Cumque, impedit possimus. Architecto laborum laboriosam veritatis porro ab. Ut impedit minima aperiam eius numquam. Similique enim cupiditate sapiente sunt at totam autem est illum, eaque impedit hic! Sed molestiae similique optio ipsa quia consequuntur qui corporis sequi delectus accusamus ipsum nisi laborum temporibus, natus rerum reprehenderit quidem voluptate hic repudiandae dignissimos dolorem, reiciendis suscipit debitis eveniet? Voluptate tempore doloribus delectus saepe quasi sapiente ipsam. Nisi provident dolorem qui et quod corporis sit, esse dolor. Consectetur, cumque ipsa!",
-  },
-  {
-    id: "3",
-    title: "How to get best deals on",
-    imageUrl: "/news/news3.png",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam suscipit, autem earum possimus blanditiis consequuntur inventore cupiditate iusto natus? Ratione non nesciunt qui officiis rem sapiente est similique voluptates quae facere fuga beatae, ullam excepturi velit ipsum explicabo, impedit dolores tenetur ut provident? Perferendis totam voluptate fugit ab facilis ullam est sit saepe minus ratione dolorem veniam ea provident nobis at cum beatae vel autem, similique asperiores voluptates recusandae voluptatem, numquam inventore. Cumque, impedit possimus. Architecto laborum laboriosam veritatis porro ab. Ut impedit minima aperiam eius numquam. Similique enim cupiditate sapiente sunt at totam autem est illum, eaque impedit hic! Sed molestiae similique optio ipsa quia consequuntur qui corporis sequi delectus accusamus ipsum nisi laborum temporibus, natus rerum reprehenderit quidem voluptate hic repudiandae dignissimos dolorem, reiciendis suscipit debitis eveniet? Voluptate tempore doloribus delectus saepe quasi sapiente ipsam. Nisi provident dolorem qui et quod corporis sit, esse dolor. Consectetur, cumque ipsa!",
-  },
-];
+import BaseButton from "~/components/widgets/button/BaseButton.vue";
+import { menuItems } from "~/data/sidebar/menu";
 
 const axios = useAxios();
 
@@ -134,20 +102,56 @@ const { baseURL } = runtimeConfig.public.axios;
 
 const artikelData = ref<Artikel[]>([]);
 
-onMounted(async () => {
-  const newsAvailable = newsData.find((temp) => temp.id == id);
+const route = useRoute();
+const { id } = route.params;
 
-  if (newsAvailable) {
-    idValid.value = true;
-    news.value = newsAvailable;
+const liked = ref(false);
+const disliked = ref(false);
+
+function handleLike() {
+  disliked.value = false;
+  liked.value = !liked.value;
+}
+
+function handleDislike() {
+  liked.value = false;
+  disliked.value = !disliked.value;
+}
+
+async function handleAction(action: string) {
+  if (action == "like") {
+    handleLike();
+  } else {
+    handleDislike();
   }
 
+  const url = `${baseURL}/api/artikel/${action}/${id}`;
+  const fetchAction = await axios.patch(url);
+
+  if (fetchAction.status == 200) {
+    loadData();
+  }
+}
+
+type Artikel = {
+  id: string;
+  title: string;
+  content: string;
+  createdAt: Date;
+  thumbnail: string;
+  like: number;
+  dislike: number;
+};
+
+async function loadData() {
   const getArtikel = await axios.get("/api/artikel", { params: { take: 5 } });
 
   if (getArtikel.status == 200) {
-    console.log(getArtikel.data);
-
     artikelData.value = getArtikel.data;
   }
+}
+
+onMounted(() => {
+  loadData();
 });
 </script>
