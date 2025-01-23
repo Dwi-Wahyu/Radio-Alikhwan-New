@@ -13,7 +13,7 @@ export const useMyArtikelStore = defineStore({
     perPage: 5,
     data: [] as any[],
     totalDatas: 5,
-    tableHeaders: ["Judul", "Content", "Thumbnail", "Aksi"],
+    tableHeaders: ["Judul", "Content", "Thumbnail", "Like", "Dislike", "Aksi"],
     step: 1,
     error: false,
     error_data: null as ResData | null,
@@ -42,6 +42,8 @@ export const useMyArtikelStore = defineStore({
                   title: element.title,
                   content: element.content,
                   thumbnail: element.thumbnail,
+                  like: element.like,
+                  dislike: element.thumbnail,
                 };
                 this.data.push(tempData);
               }

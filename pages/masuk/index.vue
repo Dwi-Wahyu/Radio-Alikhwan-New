@@ -13,7 +13,7 @@
       class="flex flex-col md:w-1/3 w-full md:bg-white justify-center md:p-14 p-4 flex-1"
     >
       <h3 class="absolute bottom-2 text-xs text-gray-500 right-14">
-        Copyright &copy; Ridha Faisyah Marola MW 215007
+        Copyright &copy; PT Skytel Indonesia
       </h3>
       <div class="flex flex-row gap-4">
         <img
@@ -97,8 +97,8 @@ import BaseButton from "@/components/widgets/button/BaseButton.vue";
 
 const store = useMyAuthStore();
 const router = useRouter();
-const username = ref("wahyu");
-const password = ref("wahyu123");
+const username = ref("");
+const password = ref("");
 const tetapLogin = ref(false);
 const clicked = ref(false);
 

@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   components: true,
   app: {
     head: {
-      title: "eData Desa Garing",
+      title: "Radio AlIkhwan",
       htmlAttrs: {
         lang: "en",
       },

@@ -14,13 +14,13 @@ type User = {
 
 export const useMyAuthStore = defineStore("myAuthStore", {
   state: () => ({
-    orgName: "Desa Garing Kabupaten Gowa",
-    appName: "eData Garing",
+    orgName: "Radio AlIkhwan",
+    appName: "Radio Alikhwan",
     appDesc: "Admin Landing Page Radio AlIkhwan",
     welcomeText: "Selamat Datang",
     welcomeDesc:
       "Silahkan masukkan username dan password untuk masuk ke aplikasi.",
-    loginText: "Login Ke Aplikasi eData Ddesa Garing",
+    loginText: "Login Ke Aplikasi Admin Radio Alikhwan",
     token: "",
     user: null as User | null,
     alwaysLogin: false,

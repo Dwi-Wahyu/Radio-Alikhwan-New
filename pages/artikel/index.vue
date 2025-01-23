@@ -24,7 +24,7 @@
         :show-row-numbers="true"
         :show-button-action="true"
         :actions="actions"
-        :columns-visible="['title', 'content', 'thumbnail']"
+        :columns-visible="['title', 'content', 'thumbnail', 'like', 'dislike']"
       />
 
       <BasePagination
