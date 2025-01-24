@@ -22,10 +22,15 @@
         :headers="artikelStore.tableHeaders"
         :data="artikelStore.data"
         :loading="artikelStore.loading"
-        :show-row-numbers="true"
+        :show-row-numbers="false"
         :show-button-action="true"
         :actions="actions"
-        :columns-visible="['title', 'content', 'thumbnail', 'like', 'dislike']"
+        :columns-visible="[
+          'title',
+          'content',
+          'img:thumbnail:artikel/thumbnail',
+          'createdAt',
+        ]"
       />
 
       <BasePagination

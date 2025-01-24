@@ -21,7 +21,7 @@
       <BaseTable
         :headers="galeriStore.tableHeaders"
         :data="galeriStore.data"
-        :loading="!galeriStore.loading"
+        :loading="galeriStore.loading"
         :show-row-numbers="false"
         :show-button-action="true"
         :actions="actions"

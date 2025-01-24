@@ -62,9 +62,9 @@
 
 <script setup>
 import { navMenu } from "~/data/sidebar/landingPageMenu";
-import { useMySidebarStore } from "~/store/sidebar";
+import { useMyLandingPageSidebar } from "~/store/sidebarLandingPage";
 
-const store = useMySidebarStore();
+const store = useMyLandingPageSidebar();
 const showDropdown = ref(false);
 
 const { sidebarActive } = storeToRefs(store);

@@ -115,7 +115,7 @@ onBeforeMount(async () => {
   store.error = false;
   store.error_data = null;
 
-  if (store.token != "" || store.isTokenExpired) {
+  if (store.token != "" && !store.isTokenExpired) {
     router.push("/artikel");
   }
 });

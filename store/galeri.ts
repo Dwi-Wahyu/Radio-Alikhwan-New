@@ -65,6 +65,8 @@ export const useMyGaleriStore = defineStore({
             this.totalDatas = this.responseData?.data.totalDatas;
             this.loading = false;
 
+            console.log(this.data);
+
             resolve(this.data);
           })
           .catch((error) => {

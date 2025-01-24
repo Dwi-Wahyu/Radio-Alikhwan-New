@@ -46,11 +46,11 @@
 
 <script lang="ts" setup>
 import { navMenu } from "~/data/sidebar/landingPageMenu";
-import { useMySidebarStore } from "~/store/sidebar";
+import { useMyLandingPageSidebar } from "~/store/sidebarLandingPage";
 
 const showDropdown = ref(false);
 
-const store = useMySidebarStore();
+const store = useMyLandingPageSidebar();
 
 function toggleSidebar() {
   store.actionSidebar();

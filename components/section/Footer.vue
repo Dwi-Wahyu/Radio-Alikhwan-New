@@ -18,11 +18,11 @@
     <div class="flex flex-col">
       <h1 class="font-semibold">Kontak Kami</h1>
       <div class="flex items-center gap-2">
-        <IconsLocation />
+        <IconsInstagram />
         <h1>RadioAlIkhwan</h1>
       </div>
       <div class="flex items-center gap-2">
-        <IconsInstagram />
+        <IconsFacebook />
         <h1>RadioAlIkhwanFM</h1>
       </div>
       <div class="flex items-center gap-2">

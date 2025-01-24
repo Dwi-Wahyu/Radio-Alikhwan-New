@@ -13,6 +13,7 @@
             v-for="(header, index) in headers"
             :key="index"
             class="bg-[#EAEFF3] px-4 py-2 text-left font-medium text-slate-600 last:rounded-r-[8px]"
+            :class="[{ 'first:rounded-l-[8px]': !showRowNumbers }]"
           >
             {{ header }}
           </th>
@@ -41,12 +42,13 @@
             </template>
             <template v-else>
               <div v-if="value.includes('img')">
-                <!-- prettier-ignore -->
-                <img :src="
-                `${baseURL}/${value.split(':')[2]}/${
+                <img
+                  :src="`${baseURL}/${value.split(':')[2]}/${
                     row[value.split(':')[1]]
-                  }`
-                " alt="" class="max-w-40">
+                  }`"
+                  alt="gambar tidak ditemukan"
+                  class="max-w-40"
+                />
               </div>
               <div v-if="!value.includes('img')">
                 <span v-html="truncateHtml(row[value], 200)"></span>
@@ -81,10 +83,14 @@
               (showRowNumbers ? 1 : 0) +
               (showButtonAction ? 1 : 0)
             "
-            class="text-center p-4 text-danger bg-red-100 font-bold text-base"
+            class="pt-3"
           >
-            <h1 v-if="!loading">Tidak Ada Data Yang Di Temukan</h1>
-            <h1 v-if="loading">Tunggu Sejenak</h1>
+            <div
+              class="text-center p-4 text-danger bg-red-100 rounded-[8px] font-bold text-base"
+            >
+              <h1 v-if="loading">Tunggu Sejenak</h1>
+              <h1 v-else>Tidak Ada Data Yang Di Temukan</h1>
+            </div>
           </td>
         </tr>
       </tbody>

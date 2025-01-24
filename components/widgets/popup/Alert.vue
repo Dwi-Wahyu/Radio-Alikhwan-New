@@ -12,7 +12,7 @@
             <IconsClose />
           </div>
         </div>
-        <Icon :name="icon" size="120" style="color: #f24822" />
+        <IconsCircleAlert />
         <h1 class="font-semibold text-center text-[#938888]">{{ label }}</h1>
         <div class="w-full flex justify-evenly mt-4">
           <BaseButton @click="handleAction('cancel')" variant="secondary">
@@ -48,10 +48,6 @@ defineProps({
   actionLabel: {
     type: String,
     default: "Hapus",
-  },
-  icon: {
-    type: String,
-    default: "lucide:circle-alert",
   },
 });
 </script>

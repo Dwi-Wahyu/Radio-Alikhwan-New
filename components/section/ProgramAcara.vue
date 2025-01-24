@@ -10,7 +10,10 @@
           v-for="(program, programIdx) in programVisible"
           :key="programIdx"
         >
-          <IconsClockClock1 />
+          <component
+            :is="clockIcons[moment(program.startTime).format('h A') as keyof typeof clockIcons]"
+          ></component>
+
           <h1 class="font-semibold">
             {{ program.mulai }} - {{ program.selesai }}
           </h1>
@@ -46,6 +49,8 @@
 
 <script lang="ts" setup>
 import { useAutoAnimate } from "@formkit/auto-animate/vue";
+import moment from "moment";
+import { clockIcons } from "~/data/clock";
 
 const page = ref(1);
 
@@ -55,6 +60,7 @@ type Program = {
   judul: string;
   mulai: string;
   selesai: string;
+  startTime: Date;
 };
 
 const [parent] = useAutoAnimate();

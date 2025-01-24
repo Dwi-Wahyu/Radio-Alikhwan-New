@@ -158,15 +158,18 @@
         </div>
         <div
           v-if="statistikStore.data"
-          class="bg-white text-black shadow rounded-b-lg p-4 flex flex-col gap-4"
+          class="bg-white text-black items-center shadow rounded-b-lg p-4 flex flex-col gap-4"
         >
-          <Charts :chart-data="statistik.chartData" legendTextColor="black" />
-        </div>
-        <div
-          v-if="!statistikStore.data"
-          class="bg-white text-black shadow rounded-b-lg p-4 flex flex-col gap-4"
-        >
-          <h1>Belum Ada Data</h1>
+          <Charts
+            v-if="statistik.chartData.labels.length"
+            :chart-data="statistik.chartData"
+            legendTextColor="black"
+          />
+
+          <div v-else>
+            <IconsDataEmpty />
+            <h1>Belum Ada Data</h1>
+          </div>
         </div>
       </div>
     </div>
