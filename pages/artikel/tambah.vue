@@ -29,7 +29,7 @@
     <div class="mt-4">
       <client-only>
         <div class="bg-white p-6 rounded-lg shadow">
-          <TiptapEditor v-model:model-value="editorContent" />
+          <LazyWidgetsEditorTiptapEditor v-model="editorContent" />
           <div v-for="(item, idx) in fieldError" :key="idx">
             <h1 v-if="item.path == 'content'" class="text-danger text-sm mt-2">
               {{ item.message }}

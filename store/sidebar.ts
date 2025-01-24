@@ -3,7 +3,7 @@ import { menuItems } from "~/data/sidebar/menu";
 
 export const useMySidebarStore = defineStore("mySidebarStore", {
   state: () => ({
-    appName: "eData Garing",
+    appName: "Radio Alikhwan",
     menu: menuItems,
     parentActive: "/artikel",
     sidebarActive: true,
