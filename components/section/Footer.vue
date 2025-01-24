@@ -7,7 +7,7 @@
     <div class="md:ml-10">
       <h1 class="font-semibold">Alamat</h1>
       <div class="flex gap-2 items-start">
-        <Icon icon="mdi:location" />
+        <IconsLocation />
         <h1>
           Radio Al-Ikhwan 101,90 FM Makassar, Jl. Abd. Kadir No. 1 A
           Makassar 085210210911
