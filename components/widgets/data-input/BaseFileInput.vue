@@ -18,7 +18,7 @@
             v-if="errorOnChange"
             class="flex justify-center flex-col items-center"
           >
-            <Icon name="lucide:file-warning" size="60" style="color: red" />
+            <IconsFileWarning />
             <h1
               v-for="(item, errorMsgIndex) in errorMessage"
               :key="errorMsgIndex"

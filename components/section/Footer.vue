@@ -18,21 +18,17 @@
     <div class="flex flex-col">
       <h1 class="font-semibold">Kontak Kami</h1>
       <div class="flex items-center gap-2">
-        <Icon icon="mdi:location" />
+        <IconsLocation />
         <h1>RadioAlIkhwan</h1>
       </div>
       <div class="flex items-center gap-2">
-        <Icon icon="mdi:instagram" />
+        <IconsInstagram />
         <h1>RadioAlIkhwanFM</h1>
       </div>
       <div class="flex items-center gap-2">
-        <Icon icon="ic:baseline-whatsapp" />
+        <IconsWhatsapp />
         <h1>085210210911</h1>
       </div>
     </div>
   </div>
 </template>
-
-<script setup>
-import { Icon } from "@iconify/vue/dist/iconify.js";
-</script>

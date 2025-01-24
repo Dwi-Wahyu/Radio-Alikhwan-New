@@ -65,8 +65,10 @@
                 :variant="action.btnVariant"
                 size="sm"
               >
-                <Icon class="mr-1" :name="action.icon" v-if="action.icon" />
-                {{ action.label }}
+                <component :is="action.icon" v-if="action.icon"></component>
+                <span class="mt-1 ml-1">
+                  {{ action.label }}
+                </span>
               </BaseButton>
             </div>
           </td>

@@ -10,7 +10,7 @@
           v-for="(program, programIdx) in programVisible"
           :key="programIdx"
         >
-          <Icon icon="lucide:clock-1" />
+          <IconsClockClock1 />
           <h1 class="font-semibold">
             {{ program.mulai }} - {{ program.selesai }}
           </h1>
@@ -24,19 +24,18 @@
             @click="changePage(page - 1)"
             class="bg-primary rounded-lg flex items-center p-2"
           >
-            <Icon
-              icon="material-symbols:chevron-left-rounded"
-              style="color: white"
-            />
+            <IconsChevron width="15" height="15" color="text-white" />
           </button>
           <h1 class="w-14 font-bold">{{ page }}</h1>
           <button
             @click="changePage(page + 1)"
             class="bg-primary flex items-center rounded-lg p-2"
           >
-            <Icon
-              icon="material-symbols:chevron-right-rounded"
-              style="color: white"
+            <IconsChevron
+              :reverse="true"
+              width="15"
+              height="15"
+              color="text-white"
             />
           </button>
         </div>
@@ -47,7 +46,6 @@
 
 <script lang="ts" setup>
 import { useAutoAnimate } from "@formkit/auto-animate/vue";
-import { Icon } from "@iconify/vue/dist/iconify.js";
 
 const page = ref(1);
 

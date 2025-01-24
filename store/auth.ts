@@ -23,6 +23,7 @@ export const useMyAuthStore = defineStore("myAuthStore", {
     loginText: "Login Ke Aplikasi Admin Radio Alikhwan",
     token: "",
     user: null as User | null,
+    loading: false,
     alwaysLogin: false,
     error: false,
     error_data: null as ErrorData | null,
@@ -51,6 +52,7 @@ export const useMyAuthStore = defineStore("myAuthStore", {
       password: string;
       alwaysLogin: any;
     }) {
+      this.loading = true;
       this.error = false;
       this.error_data = null;
       const axios = useAxios();
@@ -59,6 +61,7 @@ export const useMyAuthStore = defineStore("myAuthStore", {
         axios
           .post("/auth/login", credentials)
           .then((response) => {
+            this.loading = false;
             this.alwaysLogin = credentials.alwaysLogin;
             this.token = response.data.access_token;
             this.user = response.data.user;
@@ -68,6 +71,7 @@ export const useMyAuthStore = defineStore("myAuthStore", {
             resolve(resolve);
           })
           .catch((error: any) => {
+            this.loading = false;
             this.error = true;
             this.error_data = error.response.data;
             reject(error);

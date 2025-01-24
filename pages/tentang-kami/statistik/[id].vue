@@ -5,9 +5,10 @@
       <div>
         <BaseButton
           @click="navigateTo('/tentang-kami/statistik')"
-          class="flex mr-3 gap-1 items-center"
+          class="rounded-lg flex gap-1 items-center"
+          size="sm"
         >
-          <Icon name="lucide:chevron-left" />
+          <IconsChevron width="14" height="14" />
           Kembali
         </BaseButton>
       </div>
@@ -27,8 +28,9 @@
             @click="onEditClick(item.id, item.kategori, item.persentase)"
             size="sm"
             class="w-fit absolute right-0"
-            ><Icon name="lucide:edit"
-          /></BaseButton>
+          >
+            <IconsEdit />
+          </BaseButton>
         </div>
       </div>
     </div>
@@ -38,7 +40,7 @@
         class="flex mr-3 gap-1 items-center"
         variant="danger"
       >
-        <Icon name="lucide:trash-2" />
+        <IconsTrash />
         Hapus Statistik
       </BaseButton>
       <BaseButton
@@ -46,7 +48,7 @@
         class="flex mr-3 gap-1 items-center"
         variant="secondary"
       >
-        <Icon name="lucide:edit" />
+        <IconsSend />
         Submit Perubahan
       </BaseButton>
     </div>

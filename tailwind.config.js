@@ -46,20 +46,4 @@ export default {
     },
   },
   plugins: [],
-  safelist: [
-    {
-      pattern: /text-(left|center|right)/,
-    },
-    {
-      pattern:
-        /^(bg|text|border)-(blue|dark-blue|orange|green|line|soft-blue|background|background-2|background-3)$/,
-    },
-    // {
-    //   pattern: /^(bg|text|border)-(blue|dark-blue|orange|green)$/,
-    //   variants: ['hover', 'focus'],
-    // },
-    {
-      pattern: /^(bg-opacity)$/,
-    },
-  ],
 };

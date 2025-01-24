@@ -7,7 +7,15 @@
     >
       <h1>Daftar Galeri</h1>
 
-      <BaseButton @click="toggleModal"> Input Gambar </BaseButton>
+      <BaseButton
+        @click="toggleModal"
+        class="rounded-lg group flex gap-1 items-center"
+        size="sm"
+      >
+        <IconsPlus />
+
+        Input Gambar
+      </BaseButton>
     </div>
     <div class="rounded-b-lg bg-white px-4 py-3 shadow">
       <BaseTable
@@ -70,6 +78,9 @@ definePageMeta({
   middleware: "auth",
 });
 
+import Copy from "~/components/icons/Copy.vue";
+import Eye from "~/components/icons/Eye.vue";
+import Trash from "~/components/icons/Trash.vue";
 import BaseButton from "~/components/widgets/button/BaseButton.vue";
 import BaseFileInput from "~/components/widgets/data-input/BaseFileInput.vue";
 import BasePagination from "~/components/widgets/datatable/BasePagination.vue";
@@ -121,19 +132,19 @@ const actions = [
     label: "Copy Url",
     onClick: onCopyClick,
     btnVariant: "primary",
-    icon: "lucide:copy",
+    icon: Copy,
   },
   {
     label: "Hapus",
     onClick: onHapusClick,
     btnVariant: "danger",
-    icon: "mdi:trash-outline",
+    icon: Trash,
   },
   {
     label: "Toggle Tampilkan",
     onClick: onTampilkanClick,
     btnVariant: "secondary",
-    icon: "mdi:eye",
+    icon: Eye,
   },
 ];
 

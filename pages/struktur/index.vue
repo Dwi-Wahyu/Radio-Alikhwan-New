@@ -1,14 +1,14 @@
 <template>
   <div class="flex flex-col w-full">
-    <div class="flex items-center justify-between">
-      <h1 class="font-semibold text-lg mb-4">Struktur Perusahaan</h1>
+    <div class="flex items-center justify-between mb-4 mt-2">
+      <h1 class="font-semibold text-lg">Struktur Perusahaan</h1>
 
       <BaseButton
         @click="navigateTo('/struktur/tambah')"
-        class="rounded-lg flex items-center gap-1"
+        class="rounded-lg flex gap-1 items-center"
         size="sm"
       >
-        <Icon name="ic:round-plus" />
+        <IconsPlus width="14" height="14" />
 
         Tambahkan Tim
       </BaseButton>
@@ -29,11 +29,7 @@
             @click="onEditPhotoClick(orang.id, orang.gambar)"
             class="w-full h-full bg-black absolute group-hover:z-40 z-30 rounded-xl cursor-pointer flex items-center justify-center flex-col gap-1"
           >
-            <Icon
-              name="material-symbols:photo"
-              style="color: white"
-              size="30"
-            />
+            <IconsPhoto />
             <h1 class="text-white font-semibold">Ganti Foto</h1>
           </div>
           <img
@@ -51,15 +47,22 @@
           </div>
 
           <div class="flex gap-2 mt-3">
-            <BaseButton variant="secondary" @click="onEditClick(orang)">
-              <Icon
-                name="material-symbols:edit-square-outline-rounded"
-                class="mr-1"
-              />
+            <BaseButton
+              class="flex items-center gap-1"
+              variant="secondary"
+              @click="onEditClick(orang)"
+            >
+              <IconsEdit />
+
               Edit
             </BaseButton>
-            <BaseButton variant="danger" @click="onHapusClick(orang)">
-              <Icon name="material-symbols:delete" class="mr-1" />
+            <BaseButton
+              class="flex items-center gap-1"
+              variant="danger"
+              @click="onHapusClick(orang)"
+            >
+              <IconsTrash />
+
               Hapus
             </BaseButton>
           </div>

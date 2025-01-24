@@ -8,10 +8,10 @@
       <h1>Daftar Program Acara</h1>
       <BaseButton
         @click="navigateTo('/program-acara/tambah')"
-        class="rounded-lg flex items-center gap-1"
+        class="rounded-lg group flex gap-1 items-center"
         size="sm"
       >
-        <Icon name="ic:round-plus" />
+        <IconsPlus />
 
         Input Program Acara
       </BaseButton>
@@ -103,6 +103,8 @@ definePageMeta({
   middleware: "auth",
 });
 
+import Edit from "~/components/icons/Edit.vue";
+import Trash from "~/components/icons/Trash.vue";
 import BaseButton from "~/components/widgets/button/BaseButton.vue";
 import BaseInput from "~/components/widgets/data-input/BaseInput.vue";
 import BasePagination from "~/components/widgets/datatable/BasePagination.vue";
@@ -138,13 +140,13 @@ const actions = [
     label: "Edit",
     onClick: onEditClick,
     btnVariant: "primary",
-    icon: "lucide:edit",
+    icon: Edit,
   },
   {
     label: "Hapus",
     onClick: onHapusClick,
     btnVariant: "danger",
-    icon: "mdi:trash-outline",
+    icon: Trash,
   },
 ];
 

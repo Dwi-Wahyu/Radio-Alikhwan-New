@@ -35,7 +35,7 @@
           >
             {{ item.label }}
 
-            <Icon name="line-md:chevron-down" />
+            <IconsChevron width="15" height="15" class="rotate-90" />
           </button>
 
           <div
@@ -54,7 +54,7 @@
         </div>
       </div>
       <button @click="store.actionSidebar">
-        <Icon name="line-md:chevron-right" />
+        <IconsChevron :reverse="true" />
       </button>
     </div>
   </div>

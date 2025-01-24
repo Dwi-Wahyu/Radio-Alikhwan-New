@@ -12,7 +12,7 @@
         :disabled="currentPage === 1"
         @click="changePage(currentPage - 1)"
       >
-        <Icon name="mdi:chevron-left" />
+        <IconsChevron width="15" height="15" />
       </button>
 
       <!-- Nomor Halaman -->
@@ -36,7 +36,7 @@
         :disabled="currentPage === totalPages"
         @click="changePage(currentPage + 1)"
       >
-        <Icon name="mdi:chevron-right" />
+        <IconsChevron width="15" height="15" :reverse="true" />
       </button>
     </div>
 

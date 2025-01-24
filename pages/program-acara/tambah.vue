@@ -8,11 +8,10 @@
       <h1>Input Program Acara</h1>
       <BaseButton
         @click="navigateTo('/program-acara')"
-        class="rounded-lg flex items-center gap-1"
+        class="rounded-lg flex gap-1 items-center"
         size="sm"
       >
-        <Icon name="mdi:chevron-left" />
-
+        <IconsChevron width="14" height="14" />
         Kembali
       </BaseButton>
     </div>

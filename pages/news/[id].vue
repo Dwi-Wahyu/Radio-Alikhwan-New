@@ -13,7 +13,7 @@
           class="w-fit gap-1 flex items-center px-4 py-2 sm:p-2 -top-8 sm:top-0 left-5 cursor-pointer rounded-full bg-white shadow absolute sm:-left-12"
           @click="navigateTo('/')"
         >
-          <Icon name="line-md:chevron-left" />
+          <IconsChevron color="#000" />
           <h1 class="block sm:hidden font-semibold">Kembali</h1>
         </div>
 
@@ -38,16 +38,15 @@
 
             <div class="flex items-center gap-2 justify-between">
               <div class="flex gap-2">
-                <BaseButton class="flex gap-1" @click="handleAction('like')">
-                  <Icon :name="liked ? 'mdi:like' : 'mdi:like-outline'" />
+                <BaseButton class="flex gap-2" @click="handleAction('like')">
+                  <IconsLike :liked="liked" />
+
                   <h1>{{ artikel.like }}</h1>
                 </BaseButton>
 
                 <BaseButton class="flex gap-1" @click="handleAction('dislike')">
-                  <Icon
-                    class="rotate-180"
-                    :name="disliked ? 'mdi:like' : 'mdi:like-outline'"
-                  />
+                  <IconsLike :liked="disliked" :reverse="true" />
+
                   <h1>{{ artikel.dislike }}</h1>
                 </BaseButton>
               </div>
@@ -93,7 +92,6 @@ definePageMeta({
 import moment from "moment";
 import Header from "~/components/landing/Header.vue";
 import BaseButton from "~/components/widgets/button/BaseButton.vue";
-import { menuItems } from "~/data/sidebar/menu";
 
 const axios = useAxios();
 

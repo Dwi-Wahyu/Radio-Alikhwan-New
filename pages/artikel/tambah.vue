@@ -8,7 +8,7 @@
         class="rounded-lg flex gap-1 items-center"
         size="sm"
       >
-        <Icon name="material-symbols:chevron-left-rounded" />
+        <IconsChevron width="14" height="14" />
         Kembali
       </BaseButton>
     </div>
@@ -41,8 +41,12 @@
 
     <div class="p-4 rounded-lg shadow bg-white mt-6 flex justify-between">
       <div class="flex gap-3">
-        <BaseButton @click="triggerFileInput" variant="secondary">
-          <Icon name="ooui:image-layout-thumbnail" class="mr-1" size="22" />
+        <BaseButton
+          @click="triggerFileInput"
+          class="flex gap-1"
+          variant="secondary"
+        >
+          <IconsThumbnail width="25" height="25" />
           {{ buttonText }}
         </BaseButton>
 
@@ -53,14 +57,11 @@
           accept="image/*"
           class="hidden"
         />
-        <BaseButton>
-          <Icon name="material-symbols:save" class="mr-1" size="22" />
-          Save Draft
-        </BaseButton>
       </div>
 
-      <BaseButton @click="handlePublish">
-        <Icon name="material-symbols:publish-rounded" class="mr-1" size="22" />
+      <BaseButton @click="handlePublish" class="flex gap-1">
+        <IconsPublish width="20" height="20" />
+
         Publish
       </BaseButton>
     </div>

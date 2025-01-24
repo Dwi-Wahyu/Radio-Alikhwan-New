@@ -10,7 +10,7 @@
     </div>
 
     <button @click="toggleSidebar" class="block sm:hidden">
-      <Icon name="material-symbols:menu-rounded" size="20" />
+      <IconsBurger />
     </button>
 
     <div class="sm:flex gap-7 hidden relative">

@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   components: true,
   app: {
     head: {
-      title: "Radio AlIkhwan",
+      title: "Radio Alikhwan",
       htmlAttrs: {
         lang: "en",
       },
@@ -31,7 +31,6 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@pinia-plugin-persistedstate/nuxt",
     "@pinia/nuxt",
-    "@nuxt/icon",
   ],
   css: ["~/assets/css/global.css"],
 
@@ -40,33 +39,6 @@ export default defineNuxtConfig({
       axios: {
         baseURL: "http://localhost:3001",
       },
-    },
-  },
-
-  icon: {
-    customCollections: [
-      {
-        prefix: "my-icon",
-        dir: "./assets/icons",
-      },
-    ],
-    serverBundle: {
-      collections: [
-        "uil",
-        "mdi",
-        "radix-icons",
-        "solar",
-        "material-symbols",
-        "lucide",
-        "ic",
-        "pajamas",
-        "flowbite",
-        "line-md",
-        "tabler",
-        "octicon",
-        "ix",
-        "fluent",
-      ],
     },
   },
 });

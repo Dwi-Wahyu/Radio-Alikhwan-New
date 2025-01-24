@@ -7,20 +7,24 @@
           @click="toggleInputStatisticForm"
           class="flex mr-3 gap-1 items-center"
         >
-          <Icon
-            :name="
-              showInputStatistic ? 'lucide:chevron-up' : 'lucide:chevron-down'
-            "
+          <IconsChevron
+            width="15"
+            height="15"
+            :class="showInputStatistic ? 'rotate-90' : '-rotate-90'"
           />
+
           Input Statistik
         </BaseButton>
         <BaseButton
           @click="toggleInputDataForm"
           class="flex gap-1 items-center"
         >
-          <Icon
-            :name="showInputData ? 'lucide:chevron-up' : 'lucide:chevron-down'"
+          <IconsChevron
+            width="15"
+            height="15"
+            :class="showInputData ? 'rotate-90' : '-rotate-90'"
           />
+
           Input Data Statistik
         </BaseButton>
       </div>
@@ -43,7 +47,8 @@
               class="flex-grow"
             />
             <BaseButton class="rounded-lg" @click="handleSubmitStatistics">
-              <Icon name="lucide:plus" class="mr-1" />
+              <IconsPlus class="mr-1" />
+
               Submit
             </BaseButton>
           </div>
@@ -123,7 +128,8 @@
 
         <div class="flex justify-between items-center">
           <BaseButton class="rounded-lg" @click="handleSubmitData">
-            <Icon name="lucide:plus" class="mr-1" />
+            <IconsPlus class="mr-1" />
+
             Submit
           </BaseButton>
           <h1 v-if="post_success" class="text-green font-semibold">
@@ -147,7 +153,7 @@
               navigateTo(`/tentang-kami/statistik/${statistik.id_statistik}`)
             "
           >
-            <Icon name="material-symbols:settings-rounded" size="20" />
+            <IconsSettings />
           </button>
         </div>
         <div

@@ -11,8 +11,8 @@ export interface MenuItem {
 export const menuItems: MenuItem[] = [
   {
     title: "Artikel",
-    icon: "iconamoon:news-fill",
-    icon2: "iconamoon:news-light",
+    icon: "artikel-active",
+    icon2: "artikel-inactive",
     route: "/artikel",
     child: [],
     roles: [],
@@ -20,8 +20,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     title: "Galeri",
-    icon: "clarity:image-gallery-solid",
-    icon2: "clarity:image-gallery-line",
+    icon: "galeri-active",
+    icon2: "galeri-inactive",
     route: "/galeri",
     child: [],
     roles: [],
@@ -29,8 +29,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     title: "Program Acara",
-    icon: "ix:scheduler-filled",
-    icon2: "ix:scheduler",
+    icon: "program-acara-active",
+    icon2: "program-acara-inactive",
     route: "/program-acara",
     child: [],
     roles: [],
@@ -38,8 +38,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     title: "Tentang Kami",
-    icon: "ix:about-filled",
-    icon2: "ix:about",
+    icon: "tentang-kami-active",
+    icon2: "tentang-kami-inactive",
     route: "/tentang-kami",
     child: [
       {
@@ -56,8 +56,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     title: "Struktur",
-    icon: "fluent:people-team-20-filled",
-    icon2: "fluent:people-team-16-regular",
+    icon: "struktur-active",
+    icon2: "struktur-inactive",
     route: "/struktur",
     child: [],
     roles: [],

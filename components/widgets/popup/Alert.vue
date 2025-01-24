@@ -9,7 +9,7 @@
           class="w-full cursor-pointer absolute top-0 left-0 flex justify-end p-4"
         >
           <div @click="handleClose">
-            <Icon name="lucide:x" />
+            <IconsClose />
           </div>
         </div>
         <Icon :name="icon" size="120" style="color: #f24822" />

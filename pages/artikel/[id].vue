@@ -8,7 +8,8 @@
         class="rounded-lg flex gap-1 items-center"
         size="sm"
       >
-        <Icon name="material-symbols:chevron-left-rounded" />
+        <IconsChevron width="14" height="14" />
+
         Kembali
       </BaseButton>
     </div>
@@ -46,7 +47,8 @@
     <div class="p-4 rounded-lg shadow bg-white mt-6 flex justify-between">
       <div class="flex gap-3">
         <BaseButton @click="toggleChangeThumbnail" variant="secondary">
-          <Icon name="ooui:image-layout-thumbnail" class="mr-1" size="22" />
+          <IconsThumbnail width="22" height="22" />
+
           Ganti Thumbnail
         </BaseButton>
 
@@ -59,9 +61,10 @@
         />
       </div>
 
-      <BaseButton @click="handleEdit">
-        <Icon name="material-symbols:publish-rounded" class="mr-1" size="22" />
-        Submit
+      <BaseButton @click="handlePublish" class="flex gap-1">
+        <IconsPublish width="20" height="20" />
+
+        Submit Update
       </BaseButton>
     </div>
   </div>

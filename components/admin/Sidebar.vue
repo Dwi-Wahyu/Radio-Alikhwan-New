@@ -5,7 +5,7 @@
     </div>
 
     <button @click="handleLogout">
-      <Icon name="material-symbols:logout" size="27" />
+      <IconsLogout />
     </button>
   </div>
 
@@ -22,14 +22,14 @@
           :key="index"
           @click="store.actionSidebar"
         >
-          <Icon
-            :name="
+          <img
+            :src="
               store.parentActive == item.route
-                ? `${item.icon}`
-                : `${item.icon2}`
+                ? `/icons/${item.icon}.svg`
+                : `/icons/${item.icon2}.svg`
             "
-            size="27"
-            style="color: white"
+            alt=""
+            class="w-6"
           />
         </button>
       </div>
@@ -60,15 +60,16 @@
             'rounded-lg': item.child == 0 && item.type == 'parent',
           }"
         >
-          <Icon
-            :name="
+          <img
+            :src="
               store.parentActive == item.route
-                ? `${item.icon}`
-                : `${item.icon2}`
+                ? `/icons/${item.icon}.svg`
+                : `/icons/${item.icon2}.svg`
             "
-            size="27"
-            style="color: white"
+            alt=""
+            class="w-6"
           />
+
           <h1
             class="text-white text-lg"
             :class="
@@ -83,15 +84,16 @@
           v-if="item.child.length > 0"
           :class="store.parentActive.includes(item.route) ? 'bg-second' : ''"
         >
-          <Icon
-            :name="
+          <img
+            :src="
               store.parentActive == item.route
-                ? `${item.icon}`
-                : `${item.icon2}`
+                ? `/icons/${item.icon}.svg`
+                : `/icons/${item.icon2}.svg`
             "
-            size="27"
-            style="color: white"
+            alt=""
+            class="w-6"
           />
+
           <h1
             class="text-white text-lg"
             :class="
@@ -135,7 +137,6 @@
 </template>
 
 <script lang="ts" setup>
-// import { Icon } from "@iconify/vue/dist/iconify.js";
 import auth from "~/middleware/auth";
 import { useMyAuthStore } from "~/store/auth";
 import { useMySidebarStore } from "~/store/sidebar";

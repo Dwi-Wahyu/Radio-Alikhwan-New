@@ -10,7 +10,7 @@
             {{ title }}
           </h1>
           <button @click="handleClick('close')">
-            <Icon name="lucide:x" />
+            <IconsClose />
           </button>
         </div>
         <div

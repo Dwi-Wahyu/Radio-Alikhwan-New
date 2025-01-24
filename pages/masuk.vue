@@ -1,5 +1,5 @@
 <template>
-  <div class="flex md:flex-row w-full h-screen bg-primary">
+  <div class="flex md:flex-row w-full max-h-svh h-screen bg-primary">
     <div class="md:flex hidden flex-col w-2/3 bg-login">
       <div class="flex flex-row gap-2 p-4">
         <img src="/logo/logo-footer.svg" class="p-0 rounded-lg h-14" alt="" />
@@ -15,30 +15,19 @@
       <h3 class="absolute bottom-2 text-xs text-gray-500 right-14">
         Copyright &copy; PT Skytel Indonesia
       </h3>
-      <div class="flex flex-row gap-4">
-        <img
-          src="@/public/logo/logo.png"
-          class="bg-white p-1 rounded-lg h-12 md:hidden block"
-          alt=""
-        />
-        <div class="flex flex-col">
-          <h1
-            class="font-bold text-sm text-center md:text-right text-white flex md:hidden"
-          >
-            {{ store.appName }}
-          </h1>
-          <h1
-            class="font-bold text-md text-left md:text-right block text-white md:hidden"
-          >
-            {{ store.orgName }}
-          </h1>
-        </div>
+      <div class="flex items-center gap-4">
+        <IconsLogoAlikhwan />
+        <h1
+          class="font-bold text-xl text-left md:text-right block text-white md:hidden"
+        >
+          {{ store.orgName }}
+        </h1>
       </div>
 
       <div
         class="flex mt-4 flex-col md:bg-none bg-white p-4 md:p-0 rounded-xl md:rounded-none"
       >
-        <h1 class="font-bold text-xl text-left md:text-right hidden md:block">
+        <h1 class="font-bold text-xl text-left md:text-right">
           {{ store.welcomeText }}
         </h1>
         <h1 class="font-light text-sm text-left md:text-right hidden md:block">
@@ -72,10 +61,12 @@
           <BaseButton
             @click="handleClick"
             variant="primary"
-            add-class="rounded-3xl"
+            add-class="rounded-3xl flex gap-2 items-center"
             :disabled="clicked"
-            >Masuk Sekarang</BaseButton
           >
+            <IconsLoading v-if="store.loading" />
+            Masuk Sekarang
+          </BaseButton>
           <h1 class="text-danger text-center font-bold pb-2">
             {{ store.error_data?.message }}
           </h1>
@@ -124,10 +115,9 @@ onBeforeMount(async () => {
   store.error = false;
   store.error_data = null;
 
-  console.log(store.token);
-  // if (store.token != "") {
-  //   router.push("/artikel");
-  // }
+  if (store.token != "" || store.isTokenExpired) {
+    router.push("/artikel");
+  }
 });
 </script>
 

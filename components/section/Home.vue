@@ -45,24 +45,27 @@ const backgroundsImage = [
     </Carousel>
     <div class="w-full hidden sm:flex absolute bottom-8 z-40 justify-center">
       <button @click="changePage(0)">
-        <Icon
-          name="radix-icons:dot-filled"
-          :class="currentSlide == 0 ? 'text-white' : 'text-gray-500'"
-          size="30"
+        <IconsDot
+          width="25"
+          height="25"
+          :color="currentSlide == 0 ? '#fff' : '#6b7280'"
+          :fill="currentSlide == 0 ? '#fff' : '#6b7280'"
         />
       </button>
       <button @click="changePage(1)">
-        <Icon
-          name="radix-icons:dot-filled"
-          :class="currentSlide == 1 ? 'text-white' : 'text-gray-500'"
-          size="30"
+        <IconsDot
+          width="25"
+          height="25"
+          :color="currentSlide == 1 ? '#fff' : '#6b7280'"
+          :fill="currentSlide == 1 ? '#fff' : '#6b7280'"
         />
       </button>
       <button @click="changePage(2)">
-        <Icon
-          name="radix-icons:dot-filled"
-          :class="currentSlide == 2 ? 'text-white' : 'text-gray-500'"
-          size="30"
+        <IconsDot
+          width="25"
+          height="25"
+          :color="currentSlide == 2 ? '#fff' : '#6b7280'"
+          :fill="currentSlide == 2 ? '#fff' : '#6b7280'"
         />
       </button>
     </div>
@@ -77,7 +80,7 @@ const backgroundsImage = [
         <div
           class="p-3 relative bg-[#D00300] group-hover:text-[#D00300] group-hover:bg-white transition-all duration-300 ease-in-out rounded-full flex items-center justify-center"
         >
-          <Icon name="mdi:music" size="30" />
+          <IconsMusic />
         </div>
         <h1 class="font-semibold">MULAI MENDENGARKAN</h1>
       </button>
@@ -96,7 +99,7 @@ const backgroundsImage = [
         <div
           class="p-5 relative bg-[#D00300] group-hover:text-[#D00300] group-hover:bg-white transition-all duration-300 ease-in-out rounded-full flex items-center justify-center"
         >
-          <Icon name="mdi:music" size="30" />
+          <IconsMusic />
         </div>
         <h1 class="font-semibold">MULAI MENDENGARKAN</h1>
       </button>

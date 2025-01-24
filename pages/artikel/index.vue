@@ -9,10 +9,11 @@
 
       <BaseButton
         @click="navigateTo('/artikel/tambah')"
-        class="rounded-lg flex gap-1 items-center"
+        class="rounded-lg group flex gap-1 items-center"
         size="sm"
       >
-        <Icon name="ic:round-plus" />
+        <IconsPlus />
+
         Tulis Artikel
       </BaseButton>
     </div>
@@ -53,6 +54,8 @@ definePageMeta({
   middleware: "auth",
 });
 
+import Edit from "~/components/icons/Edit.vue";
+import Trash from "~/components/icons/Trash.vue";
 import BaseButton from "~/components/widgets/button/BaseButton.vue";
 import BasePagination from "~/components/widgets/datatable/BasePagination.vue";
 import BaseTable from "~/components/widgets/datatable/BaseTable.vue";
@@ -95,13 +98,13 @@ const actions = [
     label: "Edit",
     onClick: onEditClick,
     btnVariant: "primary",
-    icon: "lucide:edit",
+    icon: Edit,
   },
   {
     label: "Hapus",
     onClick: onHapusClick,
     btnVariant: "danger",
-    icon: "mdi:trash-outline",
+    icon: Trash,
   },
 ];
 

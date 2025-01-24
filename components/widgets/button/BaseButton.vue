@@ -53,7 +53,7 @@ const handleClick = (event) => {
 };
 
 const baseClasses =
-  "inline-flex items-center justify-center font-medium transition-all ease-in-out duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2";
+  "inline-flex items-center group justify-center font-medium transition-all ease-in-out duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2";
 
 const variantClasses = computed(() => {
   switch (props.variant) {

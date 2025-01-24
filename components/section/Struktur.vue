@@ -40,10 +40,11 @@
         class="flex items-center gap-1 justify-center mt-10"
       >
         <button v-for="index in jumlahPage" @click="changePage(index)">
-          <Icon
-            :icon="page == index ? 'radix-icons:dot-filled' : 'radix-icons:dot'"
+          <IconsDot
             width="30"
-            color="red"
+            height="30"
+            color="#D00300"
+            :fill="page == index ? '#D00300' : '#1B1B1B'"
           />
         </button>
       </div>
@@ -52,7 +53,7 @@
     <div class="hidden sm:flex items-center flex-col">
       <div class="flex items-center gap-16">
         <button @click="changePage(page - 1)">
-          <Icon icon="line-md:chevron-left" width="50" color="red" />
+          <IconsChevron width="50" height="50" color="text-[#D00300]" />
         </button>
         <div v-if="team" ref="parent" class="grid grid-cols-2 gap-10">
           <div
@@ -79,16 +80,22 @@
           </div>
         </div>
         <button @click="changePage(page + 1)">
-          <Icon icon="line-md:chevron-right" width="50" color="red" />
+          <IconsChevron
+            width="50"
+            height="50"
+            :reverse="true"
+            color="text-[#D00300]"
+          />
         </button>
       </div>
 
       <div v-if="jumlahPage" class="mt-7 flex">
         <button v-for="index in jumlahPage" @click="changePage(index)">
-          <Icon
-            :icon="page == index ? 'radix-icons:dot-filled' : 'radix-icons:dot'"
+          <IconsDot
             width="30"
-            color="red"
+            height="30"
+            color="#D00300"
+            :fill="page == index ? '#D00300' : '#1B1B1B'"
           />
         </button>
       </div>
@@ -98,7 +105,6 @@
 
 <script lang="ts" setup>
 import { useAutoAnimate } from "@formkit/auto-animate/vue";
-import { Icon } from "@iconify/vue/dist/iconify.js";
 import { truncateHtml } from "~/function/truncateHtml";
 
 const runtimeConfig = useRuntimeConfig();
