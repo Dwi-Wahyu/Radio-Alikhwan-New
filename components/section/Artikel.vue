@@ -3,7 +3,12 @@
     class="px-6 py-10 sm:pt-28 sm:px-20 sm:py-16 w-full min-h-screen bg-[#F7F7F7]"
   >
     <div class="flex items-center mb-5 gap-3 mt-5 sm:mt-0" id="artikel">
-      <h1 class="text-2xl font-bold italic">Berita Terbaru</h1>
+      <h1
+        class="text-2xl font-bold italic"
+        @click="navigateTo('https://github.com/Dwi-Wahyu', { external: true })"
+      >
+        Berita Terbaru
+      </h1>
       <div class="border border-gray-400 flex-grow"></div>
     </div>
 
