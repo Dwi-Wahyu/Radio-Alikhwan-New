@@ -20,7 +20,7 @@
       <BaseTable
         :headers="programAcaraStore.tableHeaders"
         :data="programAcaraStore.data"
-        :loading="!programAcaraStore.loading"
+        :loading="programAcaraStore.loading"
         :show-row-numbers="true"
         :show-button-action="true"
         :actions="actions"

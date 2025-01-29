@@ -3,7 +3,7 @@
     class="w-full px-6 bg-primary shadow-xl text-white py-4 md:px-20 flex justify-between items-center"
   >
     <div class="flex items-center gap-2">
-      <img src="/logo/al-ikhwan.png" alt="" />
+      <img src="/logo/logo-alikhwan-white.png" alt="" />
       <h1 class="text-xl hidden sm:block font-bold text-[24px]">
         Al-Ikhwan Radio
       </h1>

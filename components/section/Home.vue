@@ -73,7 +73,7 @@ const backgroundsImage = [
     <div class="absolute z-40 -bottom-10">
       <button
         @click="
-          navigateTo('https://play.radioalikhwan.com/', { external: true })
+          navigateTo('https://play.radioalikhwan.com', { external: true })
         "
         class="text-white group flex sm:hidden w-fit hover:bg-[#D00300] transition-all duration-300 ease-in-out mt-14 pr-4 inset-0 bg-red-900/20 backdrop-blur-md gap-2 items-center p-2 rounded-full"
       >
@@ -92,7 +92,7 @@ const backgroundsImage = [
       <img src="~/assets/icons/home-logo.svg" alt="" class="w-[40rem] mt-5" />
       <button
         @click="
-          navigateTo('https://play.radioalikhwan.com/', { external: true })
+          navigateTo('https://play.radioalikhwan.com', { external: true })
         "
         class="text-white group hidden sm:flex w-fit hover:bg-[#D00300] transition-all duration-300 ease-in-out mt-14 pr-4 inset-0 bg-red-900/20 backdrop-blur-md gap-2 items-center p-2 rounded-full"
       >

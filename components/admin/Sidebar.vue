@@ -14,7 +14,7 @@
     :class="store.sidebarActive ? 'p-4' : 'p-1'"
   >
     <div class="flex flex-col items-center gap-2" v-if="!store.sidebarActive">
-      <img src="/logo/al-ikhwan.png" class="my-4" alt="" />
+      <img src="/public/logo/logo-alikhwan-white.png" class="my-4" alt="" />
 
       <div class="flex flex-col gap-5">
         <button

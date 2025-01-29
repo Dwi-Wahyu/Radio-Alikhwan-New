@@ -139,6 +139,14 @@
       </div>
     </div>
 
+    <div
+      v-if="!statistikStore.data.length"
+      class="px-4 py-3 flex-col gap-3 bg-white h-40 shadow flex items-center justify-center rounded-lg"
+    >
+      <IconsEmpty />
+      <h1 class="font-semibold">Belum Ada Statistik</h1>
+    </div>
+
     <div class="mt-4 grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
       <div
         v-for="(statistik, statistikIdx) in statistikStore.data"

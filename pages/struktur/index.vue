@@ -15,6 +15,14 @@
     </div>
 
     <div
+      v-if="!strukturStore.data.length"
+      class="px-4 py-3 flex-col gap-3 bg-white h-40 shadow flex items-center justify-center rounded-lg"
+    >
+      <IconsEmpty />
+      <h1 class="font-semibold">Belum Ada Struktur</h1>
+    </div>
+
+    <div
       v-if="strukturStore.data"
       class="grid grid-cols-1 md:grid-cols-2 gap-2"
     >
