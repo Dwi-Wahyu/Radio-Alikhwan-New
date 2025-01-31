@@ -63,13 +63,13 @@ export const menuItems: MenuItem[] = [
     roles: [],
     type: "parent",
   },
-  {
-    title: "Komentar",
-    icon: "komentar-active",
-    icon2: "komentar-inactive",
-    route: "/komentar",
-    child: [],
-    roles: [],
-    type: "parent",
-  },
+  // {
+  //   title: "Komentar",
+  //   icon: "komentar-active",
+  //   icon2: "komentar-inactive",
+  //   route: "/komentar",
+  //   child: [],
+  //   roles: [],
+  //   type: "parent",
+  // },
 ];
