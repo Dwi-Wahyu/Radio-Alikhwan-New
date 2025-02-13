@@ -2,6 +2,8 @@
   <Header class="fixed top-0 left-0 z-50" />
   <Sidebar />
 
+  <Player />
+
   <Home />
   <Artikel />
   <TentangKami />
@@ -13,6 +15,7 @@
 
 <script setup>
 import Header from "~/components/landing/Header.vue";
+import Player from "~/components/landing/Player.vue";
 import Sidebar from "~/components/landing/Sidebar.vue";
 import Artikel from "~/components/section/Artikel.vue";
 import Footer from "~/components/section/Footer.vue";

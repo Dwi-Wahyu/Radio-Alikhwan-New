@@ -1,6 +1,6 @@
 <template>
   <label v-if="label" :for="id" class="block text-sm font-bold mb-2">
-    {{ label }}
+    {{ label }} <span v-if="require" class="text-danger">*</span>
   </label>
   <textarea
     :id="id"
@@ -25,6 +25,10 @@ defineProps({
   label: {
     type: String,
     default: "",
+  },
+  require: {
+    type: Boolean,
+    default: false,
   },
   id: {
     type: String,
