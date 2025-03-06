@@ -86,13 +86,15 @@
     <div v-if="artikelData.length" class="sm:block hidden">
       <div
         @click="navigateTo(`/news/${artikelData[0].id}`)"
-        class="flex bg-white w-full items-center justify-between cursor-pointer shadow"
+        class="flex bg-white w-full h-fit justify-between items-center cursor-pointer shadow"
       >
-        <div class="p-4">
-          <h1 class="font-semibold text-lg">
-            {{ artikelData[0].title }}
-          </h1>
-          <span v-html="truncateHtml(artikelData[0].content, 1000)"> </span>
+        <div class="p-4 flex flex-col justify-between h-full">
+          <div>
+            <h1 class="font-semibold text-lg">
+              {{ artikelData[0].title }}
+            </h1>
+            <span v-html="truncateHtml(artikelData[0].content, 1000)"> </span>
+          </div>
         </div>
         <img
           :src="`${baseURL}/artikel/thumbnail/${artikelData[0].thumbnail}`"

@@ -82,7 +82,6 @@
 <script setup>
 import BaseButton from "~/components/widgets/button/BaseButton.vue";
 import BaseInput from "~/components/widgets/data-input/BaseInput.vue";
-import TiptapEditor from "~/components/widgets/editor/TiptapEditor.vue";
 import Toast from "~/components/widgets/popup/Toast.vue";
 import { useMyAuthStore } from "~/store/auth";
 

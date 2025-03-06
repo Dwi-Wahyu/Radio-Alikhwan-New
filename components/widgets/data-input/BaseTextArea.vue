@@ -8,7 +8,7 @@
     :value="modelValue"
     @input="$emit('update:modelValue', $event.target.value)"
     :class="`${height} ${error ? 'border-red-600' : 'border-gray-200'}`"
-    class="text-left w-full focus:outline-none border p-4 rounded-lg"
+    class="text-left w-full focus:outline-none border shadow p-4 rounded-lg"
   ></textarea>
 </template>
 
@@ -18,6 +18,7 @@ defineProps({
     type: String,
     default: "",
   },
+
   disabled: {
     type: Boolean,
     default: false,
