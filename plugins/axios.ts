@@ -7,7 +7,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   const runtimeConfig = useRuntimeConfig();
 
   const store = useMyAuthStore();
-  const router = useRouter(); // Tambahkan router
+  const router = useRouter();
 
   let axiosInstance: AxiosInstance;
 

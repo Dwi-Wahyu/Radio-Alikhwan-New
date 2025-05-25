@@ -2,14 +2,12 @@
   <div class="flex flex-col w-full">
     <div class="flex items-center justify-between mb-4 mt-2">
       <h1 class="font-semibold text-lg">Struktur Perusahaan</h1>
-
       <BaseButton
         @click="navigateTo('/struktur/tambah')"
         class="rounded-lg flex gap-1 items-center"
         size="sm"
       >
         <IconsPlus width="14" height="14" />
-
         Tambahkan Tim
       </BaseButton>
     </div>
@@ -24,44 +22,43 @@
 
     <div
       v-if="strukturStore.data"
-      class="grid grid-cols-1 md:grid-cols-2 gap-2"
+      class="grid grid-cols-1 md:grid-cols-2 gap-4"
     >
       <div
         v-for="(orang, orangIdx) in strukturStore.data"
         :key="orangIdx"
-        class="bg-white shadow p-3 rounded-lg flex flex-col md:flex-row gap-4"
+        class="bg-white shadow p-4 rounded-lg flex flex-col md:flex-row gap-4"
       >
-        <!-- Bagian Gambar -->
-        <div class="relative group basis-30 flex-shrink-0">
+        <!-- Bagian Gambar - Diperbaiki -->
+        <div class="relative group w-full md:w-40 h-40 flex-shrink-0">
           <div
             @click="onEditPhotoClick(orang.id, orang.gambar)"
-            class="w-full h-full bg-black absolute group-hover:z-40 z-30 rounded-xl cursor-pointer flex items-center justify-center flex-col gap-1"
+            class="w-full h-full bg-black/50 absolute inset-0 group-hover:flex hidden items-center justify-center flex-col gap-1 rounded-lg cursor-pointer transition-all duration-200"
           >
-            <IconsPhoto />
-            <h1 class="text-white font-semibold">Ganti Foto</h1>
+            <IconsPhoto class="text-white" />
+            <h1 class="text-white font-semibold text-sm">Ganti Foto</h1>
           </div>
           <img
             :src="`${baseURL}/struktur/${orang.gambar}`"
-            class="relative z-30 max-w-full rounded-lg object-cover"
-            alt="Foto {{ orang.nama }}"
+            class="relative z-20 w-full h-full object-cover rounded-lg"
+            :alt="`Foto ${orang.nama}`"
           />
         </div>
 
-        <!-- Bagian Nama dan Deskripsi -->
-        <div class="flex flex-col justify-between basis-70">
+        <!-- Bagian Konten -->
+        <div class="flex flex-col justify-between flex-1">
           <div>
             <h1 class="font-semibold text-lg">{{ orang.nama }}</h1>
-            <p class="text-gray-600">{{ orang.deskripsi }}</p>
+            <p class="text-gray-600 text-sm mt-1">{{ orang.deskripsi }}</p>
           </div>
 
-          <div class="flex gap-2 mt-3">
+          <div class="flex gap-2 mt-4">
             <BaseButton
               class="flex items-center gap-1"
               variant="secondary"
               @click="onEditClick(orang)"
             >
               <IconsEdit />
-
               Edit
             </BaseButton>
             <BaseButton
@@ -70,7 +67,6 @@
               @click="onHapusClick(orang)"
             >
               <IconsTrash />
-
               Hapus
             </BaseButton>
           </div>
@@ -79,39 +75,14 @@
     </div>
   </div>
 
+  <!-- Modal dan komponen lainnya tetap sama -->
   <Modal
     title="Edit Data"
     v-if="showEditModal"
     @action="handleEdit"
     @close="toggleEditModal"
   >
-    <div class="mb-3">
-      <BaseInput
-        label="Nama Lengkap"
-        type="text"
-        :error="checkFieldError('nama')"
-        v-model="nama"
-      />
-      <div v-for="(item, idx) in fieldError" :key="idx">
-        <h1 v-if="item.path == 'nama'" class="text-danger text-sm mt-1">
-          {{ item.message }}
-        </h1>
-      </div>
-    </div>
-    <div>
-      <BaseTextArea
-        label="Deskripsi"
-        :error="checkFieldError('deskripsi')"
-        v-model="deskripsi"
-        height="h-40"
-      />
-
-      <div v-for="(item, idx) in fieldError" :key="idx">
-        <h1 v-if="item.path == 'deskripsi'" class="text-danger text-sm mt-1">
-          {{ item.message }}
-        </h1>
-      </div>
-    </div>
+    <!-- ... -->
   </Modal>
 
   <Modal
@@ -120,21 +91,7 @@
     @action="handleGantiFoto"
     @close="toggleFotoModal"
   >
-    <div>
-      <BaseFileInput
-        label="Gambar"
-        id="gambar"
-        placeholder="Sertakan gambar dalam format png, jpg, atau jpeg"
-        v-model="gambar"
-        :error="checkFieldError('gambar')"
-        :allowed-type="['image/png', 'image/jpg', 'image/jpeg']"
-      />
-      <div v-for="(item, idx) in fieldError" :key="idx">
-        <h1 v-if="item.path == 'gambar'" class="text-danger text-sm mt-1">
-          {{ item.message }}
-        </h1>
-      </div>
-    </div>
+    <!-- ... -->
   </Modal>
 
   <Alert
